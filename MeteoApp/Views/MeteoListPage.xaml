@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MeteoApp" x:Class="MeteoApp.MeteoListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MeteoApp" x:Class="MeteoApp.MeteoListPage" BackgroundImageSource="background.png">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" Clicked="OnItemAdded">
             <ToolbarItem.Icon>
