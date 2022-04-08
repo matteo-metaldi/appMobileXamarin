@@ -2,21 +2,21 @@
 {
     public class MeteoItemViewModel : BaseViewModel
     {
-        Entry _entry;
+        Location _location;
 
-        public Entry Entry
+        public Location Location
         {
-            get { return _entry;  }
+            get { return _location;  }
             set
             {
-                _entry = value;
+                _location = value;
                 OnPropertyChanged();
             }
         }
 
-        public MeteoItemViewModel(Entry entry)
+        public MeteoItemViewModel(Location location)
         {
-            Entry = entry;
+            Location = location;
         }
     }
 }
