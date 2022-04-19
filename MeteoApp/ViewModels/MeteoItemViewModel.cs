@@ -6,6 +6,7 @@
 
         public Location Location
         {
+
             get { return _location;  }
             set
             {
@@ -17,6 +18,7 @@
         public MeteoItemViewModel(Location location)
         {
             Location = location;
+            
         }
     }
 }

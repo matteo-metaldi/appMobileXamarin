@@ -17,9 +17,19 @@ namespace MeteoApp
             base.OnAppearing();
         }
 
-        void OnItemAdded(object sender, EventArgs e)
+        async void OnItemAdded(object sender, EventArgs e)
         {
-            _ = DisplayAlert("Messaggio", "Testo", "OK");
+            System.Random random = new System.Random();
+            string city = await DisplayPromptAsync("1. Inserisci nome citta", " ");
+            string country = await DisplayPromptAsync("2. Inserisci nome nazione", " ");
+            Location addedLocation = new Location
+            {
+                ID = random.Next(),
+                CityName = city,
+                CountryName = country
+            };
+            
+            MeteoListViewModel.addLocationToList(addedLocation);
         }
 
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)

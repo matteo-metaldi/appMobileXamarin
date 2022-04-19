@@ -5,7 +5,7 @@ namespace MeteoApp
 {
     public class MeteoListViewModel : BaseViewModel
     {
-        ObservableCollection<Location> _entries;
+        static ObservableCollection<Location> _entries;
 
         public ObservableCollection<Location> Locations
         {
@@ -30,7 +30,16 @@ namespace MeteoApp
                 };
 
                 Locations.Add(e);
+                
             }
+        }
+
+        public static void addLocationToList(Location locationAdd)
+        {
+            Console.WriteLine("Hello");
+            Console.WriteLine(locationAdd.CountryName);
+            Console.WriteLine(locationAdd.CityName);
+            _entries.Add(locationAdd);
         }
     }
 }
