@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MeteoApp.MeteoItemPage" BackgroundImageSource="background.png" >
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:meteoapp="clr-namespace:MeteoApp" x:DataType="meteoapp:MeteoItemViewModel" x:Class="MeteoApp.MeteoItemPage" BackgroundImageSource="background.png" >
     <ContentPage.Content>
         <!--<RelativeLayout x:Name="container">
             <Label Text="{Binding Entry.Name}" RelativeLayout.XConstraint="{ConstraintExpression 
@@ -16,7 +16,7 @@
             ></Label>
         </RelativeLayout>-->
         <StackLayout Margin="20">
-            <Label Text="{Binding Temp}" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
+            <Label Text="{Binding Location}" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
             <Image HeightRequest="180" WidthRequest="200">
                 <Image.Source>
                     <!--<UriImageSource Uri="{Binding ProductImage}" />-->

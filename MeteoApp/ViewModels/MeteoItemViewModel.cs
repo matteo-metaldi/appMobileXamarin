@@ -13,15 +13,17 @@ namespace MeteoApp
 {
     public class MeteoItemViewModel : BaseViewModel
     {
-
+        
         public MeteoItemViewModel(Location location)
         {
-
+            
         }
 
+        
         WeatherService WeatherService { get; } = new WeatherService();
 
         string location = Settings.City;
+        
         public string Location
         {
             get { return location; }
@@ -29,6 +31,7 @@ namespace MeteoApp
             {
                 Settings.City = value;
                 OnPropertyChanged();
+                
             }
         }
 
