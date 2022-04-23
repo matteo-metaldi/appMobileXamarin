@@ -38,8 +38,9 @@ namespace MeteoApp
             {
                 Navigation.PushAsync(new MeteoItemPage()
                 {
+                    //Location location = (Location) e
                     BindingContext = new MeteoItemViewModel(e.SelectedItem as Location)
-                });
+                }) ;
             }
         }
     }
