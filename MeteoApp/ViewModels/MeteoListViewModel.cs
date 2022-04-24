@@ -34,11 +34,10 @@ namespace MeteoApp
             }
         }
 
+        //Metodo che aggiunge alla lista la location attuale
+        //TODO RIMPIAZZARE CON IL DATABASE
         public static void addLocationToList(Location locationAdd)
         {
-            Console.WriteLine("Hello");
-            Console.WriteLine(locationAdd.CountryName);
-            Console.WriteLine(locationAdd.CityName);
             _entries.Add(locationAdd);
         }
     }

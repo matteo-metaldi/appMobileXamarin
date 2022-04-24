@@ -13,29 +13,25 @@ namespace MeteoApp
 {
     public class MeteoItemViewModel : BaseViewModel
     {
+
         
+        //Questa è la location che viene bindata alla parte della view
+        //Viene settata dal costruttore quando viene cliccata la citta nella lista iniziale
+        //Poi si binda nel file MeteoItemPage.xaml
+        public Location ActualLocation
+        {
+            get; set;
+        }
+
         public MeteoItemViewModel(Location location)
         {
-            
+            ActualLocation = location;
         }
 
         
         WeatherService WeatherService { get; } = new WeatherService();
 
-        string location = Settings.City;
         
-        public string Location
-        {
-            get { return location; }
-            set
-            {
-                Settings.City = value;
-                OnPropertyChanged();
-                
-            }
-        }
-
-
         bool isImperial = Settings.IsImperial;
         public bool IsImperial
         {
@@ -89,7 +85,7 @@ namespace MeteoApp
 
                 
                     //Get weather by city
-                    weatherRoot = await WeatherService.GetWeather(Location.Trim(), units);
+                    weatherRoot = await WeatherService.GetWeather(ActualLocation.CityName.Trim(), units);
                 
 
 

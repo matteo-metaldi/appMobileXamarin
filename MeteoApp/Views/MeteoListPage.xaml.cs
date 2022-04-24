@@ -17,28 +17,41 @@ namespace MeteoApp
             base.OnAppearing();
         }
 
+        //Qui viene gestita la parte del click su + 
+        //Aggiunta citta alla lista
         async void OnItemAdded(object sender, EventArgs e)
         {
             System.Random random = new System.Random();
             string city = await DisplayPromptAsync("1. Inserisci nome citta", " ");
             string country = await DisplayPromptAsync("2. Inserisci nome nazione", " ");
-            Location addedLocation = new Location
+
+
+            if(city.Length == 0 || country.Length == 0)
             {
-                ID = random.Next(),
-                CityName = city,
-                CountryName = country
-            };
-            
-            MeteoListViewModel.addLocationToList(addedLocation);
+                await DisplayAlert("Errore", "Campo citta o nazione lasciati in bianco", "Ok");
+            }
+            else
+            {
+                Location addedLocation = new Location
+                {
+                    ID = random.Next(),
+                    CityName = city,
+                    CountryName = country
+                };
+
+                MeteoListViewModel.addLocationToList(addedLocation);
+            }
+
         }
 
+        //Qui avviene la gestione del click quando clicca la citta nella main lista
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
             {
                 Navigation.PushAsync(new MeteoItemPage()
                 {
-                    //Location location = (Location) e
+                    //Binda il contesto e passa per il costruttore del MeteoItemViewModel.cs
                     BindingContext = new MeteoItemViewModel(e.SelectedItem as Location)
                 }) ;
             }
