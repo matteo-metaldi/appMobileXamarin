@@ -16,21 +16,18 @@
             ></Label>
         </RelativeLayout>-->
         <StackLayout Margin="20">
-            <Label Text="{Binding ActualLocation.CityName}" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
-            <Image HeightRequest="180" WidthRequest="200">
-                <Image.Source>
-                    <!--<UriImageSource Uri="{Binding ProductImage}" />-->
-                    <UriImageSource Uri="http://openweathermap.org/img/wn/10d@2x.png" />
-                </Image.Source>
+            <Label x:Name="City" Text="{Binding ActualLocation.CityName}" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
+            <Image x:Name="Image" HeightRequest="180" WidthRequest="200">
+               
             </Image>
-            <Label Text="7,3°C" HorizontalTextAlignment="Center" FontSize="96" FontAttributes="Bold" TextColor="White"/>
-            <Label Text="5°C/9°C" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" TextColor="White"/>
+            <Label x:Name="Temp" Text="7,3°C" HorizontalTextAlignment="Center" FontSize="96" FontAttributes="Bold" TextColor="White"/>
+            <Label x:Name="TempMinMax" Text="5°C/9°C" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" TextColor="White"/>
             <Label/>
-            <Label Text="Wind speed: 1 m/s" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+            <Label x:Name="Wind" Text="Wind speed: 1 m/s" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
             <Label/>
-            <Label Text="Humidity: 10%" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+            <Label x:Name="Humidity"  Text="Humidity: 10%" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
             <Label/>
-            <Label Text="Pressure: 1000 Ha" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+            <Label x:Name="Pressure" Text="Pressure: 1000 Ha" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -20,18 +20,6 @@ namespace MeteoApp
         public MeteoListViewModel()
         {
             Locations = new ObservableCollection<Location>();
-
-            for (var i = 0; i < 10; i++)
-            {
-                var e = new Location
-                {
-                    ID = i,
-                    CityName = "Entry " + i
-                };
-
-                Locations.Add(e);
-                
-            }
         }
 
         //Metodo che aggiunge alla lista la location attuale

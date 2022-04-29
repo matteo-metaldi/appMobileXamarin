@@ -88,10 +88,6 @@ namespace MeteoApp
                     weatherRoot = await WeatherService.GetWeather(ActualLocation.CityName.Trim(), units);
                 
 
-
-                //Get forecast based on cityId
-                Forecast = await WeatherService.GetForecast(weatherRoot.CityId, units);
-
                 var unit = IsImperial ? "F" : "C";
                 Temp = $"Temp: {weatherRoot?.MainWeather?.Temperature ?? 0}°{unit}";
                 Condition = $"{weatherRoot.Name}: {weatherRoot?.Weather?[0]?.Description ?? string.Empty}";

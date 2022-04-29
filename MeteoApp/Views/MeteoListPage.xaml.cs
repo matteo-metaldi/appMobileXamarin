@@ -49,7 +49,8 @@ namespace MeteoApp
         {
             if (e.SelectedItem != null)
             {
-                Navigation.PushAsync(new MeteoItemPage()
+                Location location = (Location)e.SelectedItem;
+                Navigation.PushAsync(new MeteoItemPage(location.CityName, location.CountryName)
                 {
                     //Binda il contesto e passa per il costruttore del MeteoItemViewModel.cs
                     BindingContext = new MeteoItemViewModel(e.SelectedItem as Location)
