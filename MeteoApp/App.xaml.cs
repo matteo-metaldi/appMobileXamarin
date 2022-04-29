@@ -7,10 +7,20 @@ namespace MeteoApp
 {
     public partial class App : Application
     {
+        private static TestDatabase database;
+
+        public static TestDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                    database = new TestDatabase();
+                return database;
+            }
+        }
         public App()
         {
             InitializeComponent();
-
             var nav = new NavigationPage(new MeteoListPage())
             {
                 BarBackgroundColor = Color.LightGreen,

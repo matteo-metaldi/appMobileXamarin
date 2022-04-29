@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace MeteoApp
 {
@@ -22,11 +23,20 @@ namespace MeteoApp
             Locations = new ObservableCollection<Location>();
         }
 
-        //Metodo che aggiunge alla lista la location attuale
-        //TODO RIMPIAZZARE CON IL DATABASE
+        public static void loadListFromDatabase()
+        {
+            List<Location> location = App.Database.GetItemsAsync().Result;
+
+            location.ForEach(l => _entries.Add(l));
+        }
+
         public static void addLocationToList(Location locationAdd)
         {
             _entries.Add(locationAdd);
+            if (locationAdd.CityName != "Current location")
+            {
+                App.Database.SaveItemAsync(locationAdd);
+            }
         }
     }
 }

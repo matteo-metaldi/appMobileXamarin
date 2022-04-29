@@ -65,6 +65,7 @@ namespace MeteoApp
             };
 
             MeteoListViewModel.addLocationToList(location);
+            MeteoListViewModel.loadListFromDatabase();
         }
 
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
