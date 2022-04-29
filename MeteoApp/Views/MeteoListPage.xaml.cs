@@ -1,4 +1,5 @@
 ﻿using System;
+using Plugin.Geolocator;
 using Xamarin.Forms;
 
 namespace MeteoApp
@@ -8,7 +9,7 @@ namespace MeteoApp
         public MeteoListPage()
         {
             InitializeComponent();
-
+            GetLocation();
             BindingContext = new MeteoListViewModel();
         }
 
@@ -36,7 +37,9 @@ namespace MeteoApp
                 {
                     ID = random.Next(),
                     CityName = city,
-                    CountryName = country
+                    CountryName = country,
+                    Latitude = 100,
+                    Longitude = 200
                 };
 
                 MeteoListViewModel.addLocationToList(addedLocation);
@@ -45,13 +48,31 @@ namespace MeteoApp
         }
 
 
+        async void GetLocation()
+        {
+            var locator = CrossGeolocator.Current;
+
+            var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
+
+            System.Random random = new System.Random();
+            Location location = new Location
+            {
+                ID = random.Next(),
+                CityName = "Current location",
+                CountryName = "",
+                Latitude = position.Latitude,
+                Longitude = position.Longitude
+            };
+
+            MeteoListViewModel.addLocationToList(location);
+        }
 
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
             {
                 Location location = (Location)e.SelectedItem;
-                Navigation.PushAsync(new MeteoItemPage(location.CityName, location.CountryName)
+                Navigation.PushAsync(new MeteoItemPage(location.CityName, location.CountryName, location.Latitude, location.Longitude)
                 {
                     //Binda il contesto e passa per il costruttore del MeteoItemViewModel.cs
                     BindingContext = new MeteoItemViewModel(e.SelectedItem as Location)

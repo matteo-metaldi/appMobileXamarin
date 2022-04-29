@@ -17,9 +17,7 @@
         </RelativeLayout>-->
         <StackLayout Margin="20">
             <Label x:Name="City" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
-            <Image x:Name="Image" HeightRequest="180" WidthRequest="200">
-               
-            </Image>
+            <Image x:Name="Image" HeightRequest="180" WidthRequest="200"/>
             <Label x:Name="Temp" Text="7,3°C" HorizontalTextAlignment="Center" FontSize="96" FontAttributes="Bold" TextColor="White"/>
             <Label x:Name="TempMinMax" Text="5°C/9°C" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" TextColor="White"/>
             <Label/>
