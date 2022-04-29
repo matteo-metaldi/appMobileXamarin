@@ -16,7 +16,7 @@
             ></Label>
         </RelativeLayout>-->
         <StackLayout Margin="20">
-            <Label x:Name="City" Text="{Binding ActualLocation.CityName}" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
+            <Label x:Name="City" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
             <Image x:Name="Image" HeightRequest="180" WidthRequest="200">
                
             </Image>

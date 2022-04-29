@@ -44,7 +44,6 @@ namespace MeteoApp
 
         }
 
-        //Qui avviene la gestione del click quando clicca la citta nella main lista
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
