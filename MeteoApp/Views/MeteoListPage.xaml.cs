@@ -44,6 +44,8 @@ namespace MeteoApp
 
         }
 
+
+
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
