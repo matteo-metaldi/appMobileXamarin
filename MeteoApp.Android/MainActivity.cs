@@ -1,11 +1,10 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Plugin.FirebasePushNotification;
+using Android.Content;
+using MeteoApp;
 
 namespace MeteoApp.Droid
 {
@@ -15,19 +14,25 @@ namespace MeteoApp.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
+
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            FirebasePushNotificationManager.ProcessIntent(this, Intent);
+        }
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        protected override void OnNewIntent(Intent intent)
         {
-            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnNewIntent(intent);
+            FirebasePushNotificationManager.ProcessIntent(this, intent);
         }
     }
 }

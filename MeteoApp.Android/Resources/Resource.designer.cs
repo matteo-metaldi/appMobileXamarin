@@ -25,6 +25,7 @@ namespace MeteoApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::MeteoApp.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::MeteoApp.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::MeteoApp.Droid.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::MeteoApp.Droid.Resource.Attribute.fontProviderAuthority;
@@ -12566,13 +12567,16 @@ namespace MeteoApp.Droid
 			public const int notify_panel_notification_icon_bg = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int test_custom_background = 2131165535;
+			public const int plugin_lc_smallicon = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int tooltip_frame_dark = 2131165536;
+			public const int test_custom_background = 2131165536;
 			
 			// aapt resource value: 0x7F070161
-			public const int tooltip_frame_light = 2131165537;
+			public const int tooltip_frame_dark = 2131165537;
+			
+			// aapt resource value: 0x7F070162
+			public const int tooltip_frame_light = 2131165538;
 			
 			static Drawable()
 			{

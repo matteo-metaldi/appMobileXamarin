@@ -39,7 +39,7 @@ namespace MeteoApp
 
             City.Text = (string)weather["name"] + " (" + (string)weather["sys"]["country"] + ")";
 
-            string uriImage = "http://openweathermap.org/img/wn/"+ (string)weather["weather"][0]["icon"]+"@2x.png";
+            string uriImage = "https://openweathermap.org/img/wn/"+ (string)weather["weather"][0]["icon"]+"@4x.png";
 
             Image.Source = new UriImageSource
             {
