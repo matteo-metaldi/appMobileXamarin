@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:meteoapp="clr-namespace:MeteoApp" x:DataType="meteoapp:MeteoItemViewModel" x:Class="MeteoApp.MeteoItemPage" BackgroundImageSource="background.png" >
     <ContentPage.Content>
-        <!--<RelativeLayout x:Name="container">
-            <Label Text="{Binding Entry.Name}" RelativeLayout.XConstraint="{ConstraintExpression 
-                        Type=RelativeToParent,
-                        Property=Width, 
-                        Factor=0.5,
-                        Constant=-25}"
-                   RelativeLayout.YConstraint=
-                "{ConstraintExpression 
-                        Type=RelativeToParent,
-                        Property=Height,
-                        Factor=0.5,
-                        Constant=-25}"
-            ></Label>
-        </RelativeLayout>-->
-        <StackLayout Margin="20">
-            <Label x:Name="City" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
-            <Image x:Name="Image" HeightRequest="180" WidthRequest="200"/>
-            <Label x:Name="Temp" Text="7,3°C" HorizontalTextAlignment="Center" FontSize="96" FontAttributes="Bold" TextColor="White"/>
-            <Label x:Name="TempMinMax" Text="5°C/9°C" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" TextColor="White"/>
-            <Label/>
-            <Label x:Name="Wind" Text="Wind speed: 1 m/s" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
-            <Label/>
-            <Label x:Name="Humidity"  Text="Humidity: 10%" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
-            <Label/>
-            <Label x:Name="Pressure" Text="Pressure: 1000 Ha" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label x:Name="City" HorizontalTextAlignment="Center" FontSize="48" TextColor="White"/>
+                <Image x:Name="Image" HeightRequest="180" WidthRequest="200"/>
+                <Label x:Name="Temp" Text="7,3°C" HorizontalTextAlignment="Center" FontSize="96" FontAttributes="Bold" TextColor="White"/>
+                <Label x:Name="TempMinMax" Text="5°C/9°C" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" TextColor="White"/>
+                <Label/>
+                <Label x:Name="Wind" Text="Wind speed: 1 m/s" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+                <Label/>
+                <Label x:Name="Humidity"  Text="Humidity: 10%" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+                <Label/>
+                <Label x:Name="Pressure" Text="Pressure: 1000 Ha" HorizontalTextAlignment="Start" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
